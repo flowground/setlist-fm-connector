@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "venueId": {
+            "required": true,
+            "type": "string"
+        },
+        "p": {
+            "type": "integer",
+            "default": 1
+        }
+    }
+}

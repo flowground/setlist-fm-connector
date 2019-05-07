@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "geoId": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "venueId": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

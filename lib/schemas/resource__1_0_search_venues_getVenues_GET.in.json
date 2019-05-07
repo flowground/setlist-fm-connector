@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "cityId": {
+            "type": "string"
+        },
+        "cityName": {
+            "type": "string"
+        },
+        "country": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "p": {
+            "type": "integer",
+            "default": 1
+        },
+        "state": {
+            "type": "string"
+        },
+        "stateCode": {
+            "type": "string"
+        }
+    }
+}

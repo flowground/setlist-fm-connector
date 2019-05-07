@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "country": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "p": {
+            "type": "integer",
+            "default": 1
+        },
+        "state": {
+            "type": "string"
+        },
+        "stateCode": {
+            "type": "string"
+        }
+    }
+}

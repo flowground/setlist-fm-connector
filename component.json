@@ -1,0 +1,289 @@
+{
+    "title": "setlist.fm",
+    "description": "<p>\nThe setlist.fm API has been designed to give you easy access to setlist data in order to build fancy websites and\nother applications. Before starting to use the API, be sure to ...\n<ol>\n<li>... understand how setlist.fm works (the <a href=\"https://www.setlist.fm/faq\">FAQ</a> and the\n<a href=\"https://www.setlist.fm/guidelines\">Guidelines</a> are a good starting point),</li>\n<li>... read this documentation carefully and</li>\n<li>... <a href=\"https://www.setlist.fm/settings/api\">apply for an API key</a> (link for logged in users only) - if\nyou're no registered user yet, then <a href=\"https://www.setlist.fm/signup\">register first</a> (it's free).</li>\n</ol>\n</p>\n<p>\nIf this documentation isn't enough or if you've got other things you'd like to tell us about the API, visit the\n<a href=\"https://www.setlist.fm/forum/setlistfm/setlistfm-api\">API Forum</a>.\n</p>\n<p>\nNote that the setlist.fm API is, according to the <a href=\"https://www.setlist.fm/help/api-terms\">API terms of\nservice</a>, only free for non-commercial projects. If you're interested in using the API for commercial purposes,\n<a href=\"https://www.setlist.fm/contact\">contact us</a>.\n</p>\n\n<h2>About this Service</h2>\n<p>\nThis service provides methods to get both setlists and components of setlists such as artists, cities, countries or\nvenues.\n</p>\n\n<h2>Supported Content Types</h2>\n<p>\nThe REST service currently supports XML (default) and JSON content.\n</p>\n<p>\nTo receive a JSON response, set the <code>Accept</code>\n<a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1\">header</a> to <em>application/json</em>.\n</p>\n\n<h2>Internationalization</h2>\n<p>\n<small>(Please note that this is an experimental feature and does not work for all cities!)</small>\n</p>\n<p>\nMost of the featured methods honor the <code>Accept-Language</code>\n<a href=\"https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4\">header</a>. This header is used for\nlocalizing cities and countries. The default language is English (en), but you can provide any of the languages\nSpanish (es), French (fr), German (de), Portuguese (pt), Turkish (tr), Italian (it) or Polish (pl).\n</p>\n<p>\nE.g. if you search a setlist for a concert that took place in Vienna and you pass &quot;de&quot; as header, you'll\nget <em>&quot;Wien, &Ouml;sterreich&quot;</em> instead of <em>&quot;Vienna, Austria&quot;</em>.<br/>\nThis also works if you use a different language than the country's native language.\n</p>\n<p>\nE.g. for a concert in New York, you'll get <em>&quot;Nueva York, Estados Unidos&quot;</em> instead of <em>&quot;New\nYork, United States&quot;</em> if you pass &quot;es&quot; as language.\n</p>\n\n<h2>API Keys</h2>\n\nAPI keys (<a href=\"https://www.setlist.fm/settings/api\">application form</a>) must be included in the request with\nthe <code>x-api-key</code> header.\n\n<h2>Version History</h2>\n<table class=\"table table-bordered table-versions\">\n<thead>\n<tr>\n<th>Version</th>\n<th>Docs</th>\n<th>End of Service</th>\n</tr>\n</thead> <tbody>\n<tr>\n<td><strong>1.0</strong></td>\n<td><a href=\"/docs/1.0\">Docs</a></td>\n<td>-</li>\n</tr>\n<tr>\n<td><strong>0.1</strong></td>\n<td></td>\n<td>December 31, 2017</li>\n</tr>\n</tbody>\n</table>",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/setlist.fm/1.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.setlist.fm/rest",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "resource__1_0_artist__mbid__getArtist_GET": {
+            "main": "./lib/actions/resource__1_0_artist__mbid__getArtist_GET.js",
+            "title": ".",
+            "description": "<p>\nReturns an artist for a given Musicbrainz MBID\n</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_artist__mbid__getArtist_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_artist__mbid__setlists_getArtistSetlists_GET": {
+            "main": "./lib/actions/resource__1_0_artist__mbid__setlists_getArtistSetlists_GET.js",
+            "title": ".",
+            "description": "<p>\nGet a list of an artist's setlists.\n</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_artist__mbid__setlists_getArtistSetlists_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_city__geoId__getCity_GET": {
+            "main": "./lib/actions/resource__1_0_city__geoId__getCity_GET.js",
+            "title": "Get a city by its unique geoId.",
+            "description": "Get a city by its unique geoId.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_city__geoId__getCity_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_search_artists_getArtists_GET": {
+            "main": "./lib/actions/resource__1_0_search_artists_getArtists_GET.js",
+            "title": "Search for artists.",
+            "description": "Search for artists.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_search_artists_getArtists_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_search_cities_getCities_GET": {
+            "main": "./lib/actions/resource__1_0_search_cities_getCities_GET.js",
+            "title": "Search for a city.",
+            "description": "Search for a city.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_search_cities_getCities_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_search_countries_getCountries_GET": {
+            "main": "./lib/actions/resource__1_0_search_countries_getCountries_GET.js",
+            "title": "Get a complete list of all supported countries.",
+            "description": "Get a complete list of all supported countries.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_search_countries_getCountries_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_search_setlists_getSetlists_GET": {
+            "main": "./lib/actions/resource__1_0_search_setlists_getSetlists_GET.js",
+            "title": "Search for setlists.",
+            "description": "Search for setlists.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_search_setlists_getSetlists_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_search_venues_getVenues_GET": {
+            "main": "./lib/actions/resource__1_0_search_venues_getVenues_GET.js",
+            "title": "Search for venues.",
+            "description": "Search for venues.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_search_venues_getVenues_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_setlist_version__versionId__getSetlistVersion_GET": {
+            "main": "./lib/actions/resource__1_0_setlist_version__versionId__getSetlistVersion_GET.js",
+            "title": ".",
+            "description": "<p>\nReturns a setlist for the given versionId. The setlist returned isn't necessarily the most recent version. E.g.\nif you pass the versionId of a setlist that got edited since you last accessed it, you'll get the same version as\nlast time.\n</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_setlist_version__versionId__getSetlistVersion_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_setlist__setlistId__getSetlist_GET": {
+            "main": "./lib/actions/resource__1_0_setlist__setlistId__getSetlist_GET.js",
+            "title": ".",
+            "description": "<p>\nReturns the current version of a setlist. E.g. if you pass the id of a setlist that got edited since you last\naccessed it, you'll get the current version.\n</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_setlist__setlistId__getSetlist_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_user__userId__getUser_GET": {
+            "main": "./lib/actions/resource__1_0_user__userId__getUser_GET.js",
+            "title": "Get a user by userId.",
+            "description": "Get a user by userId.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_user__userId__getUser_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_user__userId__attended_getUserAttendedSetlists_GET": {
+            "main": "./lib/actions/resource__1_0_user__userId__attended_getUserAttendedSetlists_GET.js",
+            "title": ".",
+            "description": "<p>\nGet a list of setlists of concerts attended by a user.\n</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_user__userId__attended_getUserAttendedSetlists_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_user__userId__edited_getUserEditedSetlists_GET": {
+            "main": "./lib/actions/resource__1_0_user__userId__edited_getUserEditedSetlists_GET.js",
+            "title": ".",
+            "description": "<p>\nGet a list of setlists of concerts edited by a user. The list contains the current version, not the version\nedited.\n</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_user__userId__edited_getUserEditedSetlists_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_venue__venueId__getVenue_GET": {
+            "main": "./lib/actions/resource__1_0_venue__venueId__getVenue_GET.js",
+            "title": "Get a venue by its unique id.",
+            "description": "Get a venue by its unique id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_venue__venueId__getVenue_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "resource__1_0_venue__venueId__setlists_getVenueSetlists_GET": {
+            "main": "./lib/actions/resource__1_0_venue__venueId__setlists_getVenueSetlists_GET.js",
+            "title": ".",
+            "description": "<p>\nGet setlists for a specific venue.\n</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/resource__1_0_venue__venueId__setlists_getVenueSetlists_GET.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

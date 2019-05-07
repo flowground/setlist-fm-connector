@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "mbid": {
+            "required": true,
+            "type": "string"
+        },
+        "p": {
+            "type": "integer",
+            "default": 1
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "artistMbid": {
+            "type": "string"
+        },
+        "artistName": {
+            "type": "string"
+        },
+        "artistTmid": {
+            "type": "integer"
+        },
+        "p": {
+            "type": "integer",
+            "default": 1
+        },
+        "sort": {
+            "type": "string",
+            "default": "sortName"
+        }
+    }
+}

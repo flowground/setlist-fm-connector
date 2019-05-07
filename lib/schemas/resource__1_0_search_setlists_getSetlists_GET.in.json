@@ -1,0 +1,54 @@
+{
+    "type": "object",
+    "properties": {
+        "artistMbid": {
+            "type": "string"
+        },
+        "artistName": {
+            "type": "string"
+        },
+        "artistTmid": {
+            "type": "integer"
+        },
+        "cityId": {
+            "type": "string"
+        },
+        "cityName": {
+            "type": "string"
+        },
+        "countryCode": {
+            "type": "string"
+        },
+        "date": {
+            "type": "string"
+        },
+        "lastFm": {
+            "type": "integer"
+        },
+        "lastUpdated": {
+            "type": "string"
+        },
+        "p": {
+            "type": "integer",
+            "default": 1
+        },
+        "state": {
+            "type": "string"
+        },
+        "stateCode": {
+            "type": "string"
+        },
+        "tourName": {
+            "type": "string"
+        },
+        "venueId": {
+            "type": "string"
+        },
+        "venueName": {
+            "type": "string"
+        },
+        "year": {
+            "type": "string"
+        }
+    }
+}
