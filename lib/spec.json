@@ -205,7 +205,6 @@
                         }
                     }
                 },
-                "summary": ".",
                 "tags": [
                     "/1.0/artist/{mbid}"
                 ]
@@ -1588,7 +1587,6 @@
                         }
                     }
                 },
-                "summary": ".",
                 "tags": [
                     "/1.0/artist/{mbid}/setlists"
                 ]
@@ -1805,7 +1803,6 @@
                         }
                     }
                 },
-                "summary": "Get a city by its unique geoId.",
                 "tags": [
                     "/1.0/city/{geoId}"
                 ]
@@ -5738,7 +5735,6 @@
                         }
                     }
                 },
-                "summary": ".",
                 "tags": [
                     "/1.0/setlist/version/{versionId}"
                 ]
@@ -6855,7 +6851,6 @@
                         }
                     }
                 },
-                "summary": ".",
                 "tags": [
                     "/1.0/setlist/{setlistId}"
                 ]
@@ -8394,7 +8389,6 @@
                         }
                     }
                 },
-                "summary": ".",
                 "tags": [
                     "/1.0/user/{userId}/attended"
                 ]
@@ -9777,7 +9771,6 @@
                         }
                     }
                 },
-                "summary": ".",
                 "tags": [
                     "/1.0/user/{userId}/edited"
                 ]
@@ -11464,7 +11457,6 @@
                         }
                     }
                 },
-                "summary": ".",
                 "tags": [
                     "/1.0/venue/{venueId}/setlists"
                 ]
